@@ -7,6 +7,6 @@ I've often struggled with mismatches between torch versions and CUDA versions. I
 python fast_install_torch.py
 ```
 ## How it work?
-When you run this script, it will automatically detect your CUDA version, let you choose your conda installation environment, and select the torch version you want. It will then automatically complete the download. There's no visual progress bar during the download process, so please be patient and wait for a few minutes. You'll be notified when the installation is complete. 
+When you run this script, it will automatically detect your CUDA version, run on **the current cuda environment(change the cuda env manually please)**, and select the torch version you want. It will then automatically complete the download. There's no visual progress bar during the download process, so please be patient and wait for a few minutes. You'll be notified when the installation is complete. 
 (Note: If the CUDA version can't be matched, it's recommended to choose a version higher than your current one. For example, if I have cu115, I would select cu121, and then choose the torch version I want.)
 

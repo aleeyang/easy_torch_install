@@ -13,36 +13,36 @@ def run_command(command):
         sys.exit(1)
     return output.decode('utf-8')
 
-# Ask the user if they want to create a new conda environment
-create_env = input("Do you want to create a new conda environment? (y/n): ").lower()
+# # Ask the user if they want to create a new conda environment
+# create_env = input("Do you want to create a new conda environment? (y/n): ").lower()
 
-if create_env == 'y':
-    # Get environment name and Python version
-    env_name = input("Enter the name for the new environment: ")
-    python_version = input("Enter the Python version (e.g., 3.8): ")
+# if create_env == 'y':
+#     # Get environment name and Python version
+#     env_name = input("Enter the name for the new environment: ")
+#     python_version = input("Enter the Python version (e.g., 3.8): ")
 
-    # Create new environment
-    print(f"Creating new environment '{env_name}' with Python {python_version}...")
-    create_command = f"conda create -n {env_name} python={python_version} -y"
-    run_command(create_command)
+#     # Create new environment
+#     print(f"Creating new environment '{env_name}' with Python {python_version}...")
+#     create_command = f"conda create -n {env_name} python={python_version} -y"
+#     run_command(create_command)
 
-    # Activate the new environment
-    print(f"Activating environment '{env_name}'...")
-    if sys.platform.startswith('win'):
-        activate_command = f"conda activate {env_name}"
-    else:
-        activate_command = f"source activate {env_name}"
+#     # Activate the new environment
+#     print(f"Activating environment '{env_name}'...")
+#     if sys.platform.startswith('win'):
+#         activate_command = f"conda activate {env_name}"
+#     else:
+#         activate_command = f"source activate {env_name}"
     
-    # Run the activation command in a new Python process
-    activate_script = f"""
-import subprocess
-subprocess.run('{activate_command}', shell=True)
-"""
-    subprocess.run([sys.executable, '-c', activate_script])
+#     # Run the activation command in a new Python process
+#     activate_script = f"""
+# import subprocess
+# subprocess.run('{activate_command}', shell=True)
+# """
+#     subprocess.run([sys.executable, '-c', activate_script])
 
-    print(f"Environment '{env_name}' has been created and activated.")
-else:
-    print("Continuing with the current environment.")
+#     print(f"Environment '{env_name}' has been created and activated.")
+# else:
+#     print("Continuing with the current environment.")
 
 # You can add more operations here, such as installing PyTorch
 
