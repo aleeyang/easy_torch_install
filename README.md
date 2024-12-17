@@ -4,6 +4,7 @@ It can help you quickly complete the installation of a matching torch version wi
 I've often struggled with mismatches between torch versions and CUDA versions. If you're facing the same issue, you might want to try my script.
 ## How to use ?
 ```
+conda activate your_env
 python fast_install_torch.py
 ```
 ## How it work?
